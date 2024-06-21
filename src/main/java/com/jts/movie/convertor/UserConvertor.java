@@ -6,7 +6,7 @@ import com.jts.movie.response.UserResponse;
 
 public class UserConvertor {
 
-    public static User userDtoToUser(UserRequest userRequest) {
+    public static User userDtoToUser(UserRequest userRequest, String password) {
         User user = User.builder()
                 .name(userRequest.getName())
                 .age(userRequest.getAge())
@@ -14,6 +14,8 @@ public class UserConvertor {
                 .gender(userRequest.getGender())
                 .mobileNo(userRequest.getMobileNo())
                 .emailId(userRequest.getEmailId())
+                .roles(userRequest.getRoles())
+                .password(password)
                 .build();
 
         return user;
